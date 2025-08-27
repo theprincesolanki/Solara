@@ -4,7 +4,26 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="irstheme">
+
+    <!-- Dynamic SEO Meta -->
+    <title>{{ $seo['meta_title'] ?? 'Prince Enterprise – Innovation & Excellence' }}</title>
+    <meta name="description" content="{{ $seo['meta_description'] ?? '' }}">
+    <meta name="keywords" content="{{ $seo['meta_keywords'] ?? '' }}">
+    <meta name="author" content="{{ $seo['meta_author'] ?? 'Prince Enterprise' }}">
+    <meta name="robots" content="{{ $seo['meta_robots'] ?? 'index, follow' }}">
+
+    <!-- Open Graph (Facebook, LinkedIn) -->
+    <meta property="og:title" content="{{ $seo['og_title'] ?? $seo['meta_title'] ?? '' }}">
+    <meta property="og:description" content="{{ $seo['og_description'] ?? $seo['meta_description'] ?? '' }}">
+    <meta property="og:image" content="{{ $seo['og_image'] ?? asset('default-og.jpg') }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="{{ $seo['twitter_title'] ?? $seo['meta_title'] ?? '' }}">
+    <meta name="twitter:description" content="{{ $seo['twitter_description'] ?? $seo['meta_description'] ?? '' }}">
+    <meta name="twitter:image" content="{{ $seo['twitter_image'] ?? asset('default-twitter.jpg') }}">
+    <meta name="twitter:card" content="summary_large_image">
 
     <title> Prince Enterprise – Innovation & Excellence </title>
     
@@ -22,6 +41,9 @@
     <link href="{{ asset('fronted/assets/css/owl.transitions.css') }}" rel="stylesheet">
     <link href="{{ asset('fronted/assets/css/jquery.fancybox.css') }}" rel="stylesheet">
     <link href="{{ asset('fronted/assets/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('fronted/assets/css/custome.css') }}" rel="stylesheet">
+    <link href="{{ asset('fronted/assets/css/fade-style.css') }}" rel="stylesheet">
+    
     @stack('styles')
 </head>
 
@@ -48,80 +70,42 @@
         <!-- end preloader -->
 
         <!-- Start header -->
-        <header id="header" class="site-header header-style-3">
+        <header id="header" class="site-header header-style-3 fade-in-down">
             <nav class="navigation navbar navbar-default">
                 <div class="container">
-                    <div class="navbar-header">
+                    <div class="navbar-header fade-in delay-1">
                         <button type="button" class="open-btn">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="{{ route('home') }}"><img src="fronted/assets/images/logo-2.png" alt></a>
+                        <a class="navbar-brand" href="{{ route('home') }}">
+                            <img src="fronted/assets/images/logo-2.png" alt>
+                        </a>
                     </div>
-                    <div id="navbar" class="navbar-collapse collapse navigation-holder">
+                    <div id="navbar" class="navbar-collapse collapse navigation-holder fade-in delay-2">
                         <button class="close-navbar"><i class="ti-close"></i></button>
                         <ul class="nav navbar-nav">
-                            <li class="menu-item-has-children">
+                            <li class="menu-item {{ request()->routeIs('home') ? 'active' : '' }}">
                                 <a href="{{ route('home') }}">Home</a>
                             </li>
-                            <li><a href="about.html">About</a></li>
-                            <li class="menu-item-has-children">
-                                <a href="#">Pages</a>
-                                <ul class="sub-menu">
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                    <li><a href="testimonials.html">Testimonials</a></li>
-                                    <li><a href="testimonials-s2.html">Testimonials style 2</a></li>
-                                    <li><a href="team.html">Team</a></li>
-                                    <li><a href="faq.html">FAQ</a></li>
-                                    <li><a href="404.html">404</a></li>
-                                    <li><a href="shop.html">Shop</a></li>
-                                    <li><a href="shop-single.html">Shop single</a></li>
-                                </ul>
+                            <li class="menu-item {{ request()->routeIs('about') ? 'active' : '' }}">
+                                <a href="{{ route('about') }}">About</a>
                             </li>
-                            <li class="menu-item-has-children">
-                                <a href="#">Services</a>
-                                <ul class="sub-menu">
-                                    <li><a href="services.html">Services</a></li>
-                                    <li><a href="services-s2.html">Services style 2</a></li>
-                                    <li><a href="service-single.html">Mechanical Engineering</a></li>
-                                    <li><a href="oil-gas.html">Oil And Gas</a></li>
-                                    <li><a href="power-energy.html">Power And Energy</a></li>
-                                    <li><a href="sanitary-plumbing.html">Sanitary & Plumbing</a></li>
-                                    <li><a href="electrical-power.html">Electrical Power</a></li>
-                                </ul>
+                            <li class="menu-item {{ request()->routeIs('products') ? 'active' : '' }}">
+                                <a href="{{ route('products') }}">Products</a>
                             </li>
-                            <li class="menu-item-has-children">
-                                <a href="#">Projects</a>
-                                <ul class="sub-menu">
-                                    <li><a href="portfolio.html">Projects</a></li>
-                                    <li><a href="portfolio-s2.html">Projects style 2</a></li>
-                                    <li><a href="project-single.html">Project single</a></li>
-                                </ul>
+                            <li class="menu-item {{ request()->routeIs('services') ? 'active' : '' }}">
+                                <a href="{{ route('services') }}">Services</a>
                             </li>
-                            <li class="menu-item-has-children">
-                                <a href="#">Blog</a>
-                                <ul class="sub-menu">
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="blog-left-sidebar.html">Blog left sidebar</a></li>
-                                    <li><a href="blog-fullwidth.html">Blog full width</a></li>
-                                    <li class="menu-item-has-children">
-                                        <a href="#Level3">Blog single</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="blog-single.html">Blog single</a></li>
-                                            <li><a href="blog-single-left-sidebar.html">Blog single left sidebar</a></li>
-                                            <li><a href="blog-single-fullwidth.html">Blog single full width</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                            <li class="menu-item {{ request()->routeIs('contact') ? 'active' : '' }}">
+                                <a href="{{ route('contact') }}">Contact</a>
                             </li>
-                            <li><a href="contact.html">Contact</a></li>
                         </ul>
-                    </div><!-- end of nav-collapse -->
+                    </div>
 
-                    <div class="search-contact">
+                    <div class="search-contact fade-in delay-3">
                         <div class="header-search-area">
                             <div class="header-search-form">
                                 <form class="form">
@@ -139,11 +123,12 @@
                             <div class="call">
                                 <i class="fi flaticon-call"></i>
                                 <p>Call us anytime</p>
-                                <h5>+65487441584</h5>
+                                <h5><a class="call-link" href="tel:+919925589557">+91 99255 89557</a></h5>
                             </div>
                         </div>
                     </div>
                 </div><!-- end of container -->
             </nav>
         </header>
+
         <!-- end of header -->

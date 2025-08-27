@@ -26,7 +26,7 @@
                                     <h3>Usefull Links</h3>
                                 </div>
                                 <ul>
-                                    <li><a href="#">About us</a></li>
+                                    <li><a href="{{ route('about') }}">About us</a></li>
                                     <li><a href="#">Our services</a></li>
                                     <li><a href="#">Contact us</a></li>
                                     <li><a href="#">Meet team</a></li>

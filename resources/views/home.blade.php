@@ -8,41 +8,44 @@
 <section class="hero-slider hero-style-3">
     <div class="swiper-container">
         <div class="swiper-wrapper">
+
             <div class="swiper-slide">
                 <div class="slide-inner slide-bg-image" data-background="fronted/assets/images/slider/slide-4.jpg">
                     <div class="container">
                         <div data-swiper-parallax="300" class="slide-title">
-                            <h2>Quality Never Goes out of Style</h2>
+                            <h2 class="fade-in-up delay-1">Quality Never Goes out of Style</h2>
                         </div>
                         <div data-swiper-parallax="400" class="slide-text">
-                            <p>Recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa</p>
+                            <p class="fade-in-up delay-2">Recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa</p>
                         </div>
                         <div class="clearfix"></div>
                         <div data-swiper-parallax="500" class="slide-btns">
-                            <a href="#" class="theme-btn">Our services</a> 
-                            <a href="#" class="theme-btn-s2">More about us</a> 
+                            <a href="#" class="ps-btn fade-in-up delay-3"><span class="text">Our services</span></a>
+                            <a href="#" class="ps-btn fade-in-up delay-4"><span class="text">More about us</span></a>
+                            {{-- <a href="#" class="ps-btn-s2 fade-in-up delay-4">More about us</a>  --}}
                         </div>
                     </div>
-                </div> <!-- end slide-inner --> 
-            </div> <!-- end swiper-slide -->
+                </div> 
+            </div>
 
             <div class="swiper-slide">
                 <div class="slide-inner slide-bg-image" data-background="fronted/assets/images/slider/slide-2.jpg">
                     <div class="container">
                         <div data-swiper-parallax="300" class="slide-title">
-                            <h2>The Best Move you will Ever Make</h2>
+                            <h2 class="fade-in-up delay-1">The Best Move you will Ever Make</h2>
                         </div>
                         <div data-swiper-parallax="400" class="slide-text">
-                            <p>Recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa</p>
+                            <p class="fade-in-up delay-2">Recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa</p>
                         </div>
                         <div class="clearfix"></div>
                         <div data-swiper-parallax="500" class="slide-btns">
-                            <a href="#" class="theme-btn">Our services</a> 
-                            <a href="#" class="theme-btn-s2">More about us</a> 
+                            <a href="#" class="ps-btn fade-in-up delay-3"><span class="text">Our services</span></a>
+                            <a href="#" class="ps-btn fade-in-up delay-4"><span class="text">More about us</span></a>
                         </div>
                     </div>
-                </div> <!-- end slide-inner --> 
-            </div> <!-- end swiper-slide -->
+                </div>
+            </div>
+
         </div>
         <!-- end swiper-wrapper -->
 
@@ -53,42 +56,6 @@
     </div>
 </section>
 <!-- end of hero slider -->
-
-
-<!-- start feature-section-s2 -->
-<section class="features-section-s2">
-    <div class="container">
-        <div class="row">
-            <div class="col col-xs-12">
-                <div class="feature-grids clearfix">
-                    <div class="grid">
-                        <div class="icon">
-                            <i class="fi flaticon-star"></i>
-                        </div>
-                        <span class="count">01.</span>
-                        <h4>Expert Members</h4>
-                    </div>
-                    <div class="grid">
-                        <div class="icon">
-                            <i class="fi flaticon-trophy"></i>
-                        </div>
-                        <span class="count">02.</span>
-                        <h4>Awards & Accolades</h4>
-                    </div>
-                    <div class="grid">
-                        <div class="icon">
-                            <i class="fi flaticon-leadership"></i>
-                        </div>
-                        <span class="count">03.</span>
-                        <h4>Thought Leadership</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- end container -->
-</section>
-<!-- end feature-section-s2 -->
-
 
 <!-- start service-section-s2 -->
 <section class="service-section-s2 section-padding">
@@ -195,7 +162,6 @@
 </section>
 <!-- end why-choose-section -->
 
-
 <!-- start testimonials-section-s2 -->
 <section class="testimonials-section-s2 section-padding">
     <div class="container">
@@ -269,7 +235,7 @@
                     <span class="count">01.</span>
                     <h3>Welding Processing</h3>
                     <p>Travelling salesman and above it there hung a picture that he had recently cut out</p>
-                    <a href="#" class="theme-btn">Read More</a>
+                    <a href="#" class="ps-btn">Read More</a>
                 </div>
             </div>
             <div class="grid">
@@ -280,7 +246,7 @@
                     <span class="count">02.</span>
                     <h3>Materials project</h3>
                     <p>Travelling salesman and above it there hung a picture that he had recently cut out</p>
-                    <a href="#" class="theme-btn">Read More</a>
+                    <a href="#" class="ps-btn">Read More</a>
                 </div>
             </div>
             <div class="grid">
@@ -291,7 +257,7 @@
                     <span class="count">03.</span>
                     <h3>Oil & Gas project</h3>
                     <p>Travelling salesman and above it there hung a picture that he had recently cut out</p>
-                    <a href="#" class="theme-btn">Read More</a>
+                    <a href="#" class="ps-btn">Read More</a>
                 </div>
             </div>
             <div class="grid">
@@ -302,7 +268,7 @@
                     <span class="count">04.</span>
                     <h3>Power Energy project</h3>
                     <p>Travelling salesman and above it there hung a picture that he had recently cut out</p>
-                    <a href="#" class="theme-btn">Read More</a>
+                    <a href="#" class="ps-btn">Read More</a>
                 </div>
             </div>
             <div class="grid">
@@ -313,7 +279,7 @@
                     <span class="count">05.</span>
                     <h3>Power Energy project</h3>
                     <p>Travelling salesman and above it there hung a picture that he had recently cut out</p>
-                    <a href="#" class="theme-btn">Read More</a>
+                    <a href="#" class="ps-btn">Read More</a>
                 </div>
             </div>
         </div>
@@ -511,8 +477,8 @@
                     </ul>
                 </div>
                 <div class="btns">
-                    <a href="#" class="theme-btn">Our Services</a>
-                    <a href="#" class="theme-btn-s3">Contact with us</a>
+                    <a href="#" class="ps-btn">Our Services</a>
+                    <a href="#" class="ps-btn-s3">Contact with us</a>
                 </div>
             </div>
         </div>
@@ -534,7 +500,7 @@
                         <textarea class="form-control" name="note"  id="note" placeholder="Case Description..."></textarea>
                     </div>
                     <div class="submit-area">
-                        <button type="submit" class="theme-btn">Get a quote</button>
+                        <button type="submit" class="ps-btn">Get a quote</button>
                         <div id="loader">
                             <i class="ti-reload"></i>
                         </div>
@@ -639,4 +605,5 @@
 @endsection
         
 @push('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 @endpush
