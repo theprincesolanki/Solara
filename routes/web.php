@@ -10,6 +10,9 @@ Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
 Route::get('/services', [FrontendController::class, 'services'])->name('services');
 Route::get('/products', [FrontendController::class, 'products'])->name('products');
 
+
+
+
 // varified jab email verified hoga tab access hoga
 Route::get('/pe-secure-admin/dashboard', function () {
     return view('backend.dashboard');
