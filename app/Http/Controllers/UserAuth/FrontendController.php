@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\UserAuth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -14,26 +14,26 @@ class FrontendController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('frontend.home');
     }
 
     public function about()
     {
-        return view('about');
+        return view('frontend.about');
     }
 
     public function contact()
     {
-        return view('contact');
+        return view('frontend.contact');
     }
 
     public function services()
     {
-        return view('services');
+        return view('frontend.services');
     }
 
     public function products()
     {
-        return view('products');
+        return view('frontend.products');
     }
 }

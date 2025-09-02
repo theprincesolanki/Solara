@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('frontend.layout.app')
 @push('styles')
 
 @endpush

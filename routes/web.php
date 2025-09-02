@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminAuth\ProfileController;
-use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\UserAuth\FrontendController;
 
 Route::get('/', [FrontendController::class, 'index'])->name('home');
 Route::get('/about', [FrontendController::class, 'about'])->name('about');
