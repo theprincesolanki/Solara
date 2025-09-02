@@ -1,14 +1,14 @@
 <?php
 
-use App\Http\Controllers\Auth\AuthenticatedSessionController;
-use App\Http\Controllers\Auth\ConfirmablePasswordController;
-use App\Http\Controllers\Auth\EmailVerificationNotificationController;
-use App\Http\Controllers\Auth\EmailVerificationPromptController;
-use App\Http\Controllers\Auth\NewPasswordController;
-use App\Http\Controllers\Auth\PasswordController;
-use App\Http\Controllers\Auth\PasswordResetLinkController;
-use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\AdminAuth\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\AdminAuth\Auth\ConfirmablePasswordController;
+use App\Http\Controllers\AdminAuth\Auth\EmailVerificationNotificationController;
+use App\Http\Controllers\AdminAuth\Auth\EmailVerificationPromptController;
+use App\Http\Controllers\AdminAuth\Auth\NewPasswordController;
+use App\Http\Controllers\AdminAuth\Auth\PasswordController;
+use App\Http\Controllers\AdminAuth\Auth\PasswordResetLinkController;
+use App\Http\Controllers\AdminAuth\Auth\RegisteredUserController;
+use App\Http\Controllers\AdminAuth\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->prefix('pe-secure-admin/')->group(function () {
