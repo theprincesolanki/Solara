@@ -18,6 +18,7 @@ Route::get('/pe-secure-admin/dashboard', function () {
     return view('backend.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
 Route::middleware(['auth', 'verified'])->prefix('pe-secure-admin/')->name('backend.')->group(function () {
     Route::get('profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('profile', [ProfileController::class, 'update'])->name('profile.update');
