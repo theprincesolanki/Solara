@@ -122,10 +122,9 @@
     <script src="{{ asset('backend/assets/js/plugins.js') }}"></script>
 
     <!-- password create init -->
-    <script src="{{ asset('backend/assets/js/pages/passowrd-create.init.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/pages/password-create.init.js') }}"></script>
 
     <script>
-        // Toggle password visibility
         document.getElementById('password-addon').addEventListener('click', function() {
             var passwordInput = document.getElementById('password');
             if (passwordInput.type === 'password') {

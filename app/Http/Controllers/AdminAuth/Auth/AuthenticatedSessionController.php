@@ -38,7 +38,7 @@ class AuthenticatedSessionController extends Controller
             Cookie::queue('remember_me', $rememberToken, 30 * 24 * 60);
         }
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        return redirect()->intended(route('backend.dashboard', absolute: false));
     }
 
     /**

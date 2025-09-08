@@ -40,8 +40,6 @@
 
     <!-- Toastr CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-
-    
 </head>
 
 <body>
@@ -72,7 +70,6 @@
     </div>
 
     <!-- JAVASCRIPT -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ asset('backend/assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('backend/assets/libs/simplebar/simplebar.min.js') }}"></script>
     <script src="{{ asset('backend/assets/libs/node-waves/waves.min.js') }}"></script>
@@ -95,16 +92,16 @@
 
     <!-- Toastr JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
     <script>
-        /* @if(session('success'))
-            toastr.success("{{ session('success') }}");
-        @endif
+    /* @if(session('success'))
+        toastr.success("{{ session('success') }}");
+    @endif
 
-        @if(session('error'))
-            toastr.error("{{ session('error') }}");
-        @endif */
-   
+    @if(session('error'))
+        toastr.error("{{ session('error') }}");
+    @endif */
+    </script>
+   <script>
         /* <div class="custom-editor"></div>
          <div class="custom-editor-word-count"></div> */
         document.querySelectorAll('.password-addon').forEach(button => {
