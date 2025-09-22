@@ -123,7 +123,7 @@
                                             <div class="custom-editor-word-count mt-3"></div>
                                         </div>
                                         <div class="col-lg-12 text-end">
-                                            <button type="submit" class="btn btn-primary">Update Site Settings</button>
+                                            <button type="submit" class="btn btn-primary ">Update Site Settings</button>
                                         </div>
                                     </div>
                                 </form>
