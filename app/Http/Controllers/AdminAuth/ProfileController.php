@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\SiteSetting;
 
 
 class ProfileController extends Controller
@@ -16,17 +17,21 @@ class ProfileController extends Controller
     /**
      * Display the user's profile form.
      */
-    public function edit(Request $request): View
-    {
-        return view('backend.profile.edit', [
-            'user' => $request->user(),
-        ]);
-    }
+   public function edit(Request $request): View
+{
+    $settings = SiteSetting::first();
+
+    return view('backend.profile.edit', [
+        'user'      => $request->user(),
+        'settings'  => $settings,
+    ]);
+}
 
     /**
      * Update the user's profile information.
      */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
+    
+    public function update(ProfileUpdateRequest $request)
     {
         $user = $request->user();
         $data = $request->validated();
@@ -44,8 +49,12 @@ class ProfileController extends Controller
 
         $user->save();
 
-        return Redirect::route('backend.profile.edit')->with('status', 'profile-updated');
+        return response()->json([
+            'status' => true,
+            'message' => 'Profile updated successfully!',
+        ]);
     }
+
 
 
     /**

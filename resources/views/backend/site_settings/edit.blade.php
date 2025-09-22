@@ -24,17 +24,19 @@
                 <div class="card mt-n5">
                     <div class="card-body p-4">
                         <div class="text-center">
-                            <div class="profile-user position-relative d-inline-block mx-auto mb-4">
-                                <img src="{{ asset($settings->site_logo) }}" class="rounded-circle avatar-xl img-thumbnail user-profile-image material-shadow" alt="user-profile-image">
-                                <div class="avatar-xs p-0 rounded-circle profile-photo-edit">
-                                    <input id="profile-img-file-input" type="file" class="profile-img-file-input">
-                                    <label for="profile-img-file-input" class="profile-photo-edit avatar-xs">
-                                        <span class="avatar-title rounded-circle bg-light text-body material-shadow">
-                                            <i class="ri-camera-fill"></i>
-                                        </span>
-                                    </label>
-                                </div>
-                            </div>
+                            @if (isset($settings) && $settings->site_logo)
+                                <div class="profile-user position-relative d-inline-block mx-auto  mb-4">
+                                    <img src="{{ asset($settings->site_logo) }}" class="rounded-circle avatar-xl img-thumbnail user-profile-image material-shadow" alt="user-profile-image">
+                                    <div class="avatar-xs p-0 rounded-circle profile-photo-edit">
+                                        <input id="profile-img-file-input" type="file" class="profile-img-file-input">
+                                        <label for="profile-img-file-input" class="profile-photo-edit avatar-xs">
+                                            <span class="avatar-title rounded-circle bg-light text-body material-shadow">
+                                                <i class="ri-camera-fill"></i>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div> 
+                            @endif
                             <h5 class="fs-16 mb-1">{{ $user->name ?? '' }}</h5>
                             <p class="text-muted mb-0">Founder</p>
                         </div>
@@ -186,19 +188,10 @@
 
         </div>
     </div>
-
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <script>
+@endsection
+@push('scripts')
+ <script>
         $(document).ready(function() {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') || $('input[name="_token"]').val()
-                }
-            });
-
             function ajaxFormSubmit(formId, url) {
                 $(formId).on('submit', function(e) {
                     e.preventDefault();
@@ -214,6 +207,7 @@
                         contentType: false,
                         success: function(res) {
                             toastr.success(res.success || 'Updated successfully!');
+                            reloadPage();
                         },
                         error: function(xhr) {
                             if(xhr.status === 422){
@@ -234,6 +228,5 @@
             ajaxFormSubmit('#smtp-settings-form', '{{ route("backend.site-settings.update") }}');
         });
     </script>
-
-@endsection
+@endpush
 </x-app-layout>

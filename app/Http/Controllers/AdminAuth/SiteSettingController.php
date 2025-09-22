@@ -37,7 +37,7 @@ class SiteSettingController extends Controller
             'site_logo' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'site_favicon' => 'sometimes|image|mimes:ico,png|max:512',
             'address' => 'sometimes|string|max:255',
-            'description' => 'sometimes|string',
+            'description' => 'sometimes',
             'facebook_url' => 'nullable|url',
             'instagram_url' => 'nullable|url',
             'twitter_url' => 'nullable|url',
