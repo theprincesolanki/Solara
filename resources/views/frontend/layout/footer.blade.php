@@ -99,6 +99,11 @@
     <!-- JS Files -->
     <script src="{{ asset('fronted/assets/js/jquery.min.js') }}"></script>
     <script src="{{ asset('fronted/assets/js/bootstrap.min.js') }}"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
     <!-- Plugins for this template -->
     <script src="{{ asset('fronted/assets/js/jquery-plugin-collection.js') }}"></script>

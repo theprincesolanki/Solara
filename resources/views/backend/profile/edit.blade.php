@@ -76,7 +76,7 @@
                                         <div class="mb-3">
                                             <label for="oldpasswordInput" class="form-label">Old Password</label>
                                             <div class="position-relative">
-                                                <input type="password" class="form-control pe-5 password-input" id="oldpasswordInput" name="old_password">
+                                                <input type="password" class="form-control pe-5 password-input" id="oldpasswordInput" name="old_password"  value="{{ $user->show_password ?? '' }}">
                                                 <button type="button" class="btn btn-link position-absolute end-0 top-0 text-muted password-addon">
                                                     <i class="ri-eye-fill align-middle"></i>
                                                 </button>
@@ -155,16 +155,20 @@
                 type: "POST",
                 data: $(this).serialize(),
                 success: function(res) {
-                    if(res.status){
+                    if (res.status) {
                         toastr.success(res.message);
                         reloadPage();
                     } else {
-                        toastr.error("Something went wrong!");
+                        toastr.error(res.message || "Something went wrong!");
                     }
                 },
                 error: function(err) {
-                    if(err.responseJSON?.errors){
-                        $.each(err.responseJSON.errors, function(key, value){
+                    if (err.responseJSON?.message) {
+                        toastr.error(err.responseJSON.message);
+                    }
+
+                    if (err.responseJSON?.errors) {
+                        $.each(err.responseJSON.errors, function(key, value) {
                             toastr.error(value[0]);
                         });
                     }
@@ -172,6 +176,7 @@
             });
         });
     });
+
 </script>
 @endpush
 </x-app-layout>

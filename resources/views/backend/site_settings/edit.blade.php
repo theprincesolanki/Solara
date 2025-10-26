@@ -119,11 +119,13 @@
                                             <input type="text" class="form-control" name="address" placeholder="Enter address"
                                                 value="{{ old('address', $settings->address ?? '') }}">
                                         </div>
-                                        <div class="col-lg-12 mb-3">
-                                            <label class="form-label">Description</label>
-                                            <textarea class="form-control custom-editor" name="description" rows="5">{!! old('description', $settings->description ?? '') !!}</textarea>
-                                            <div class="custom-editor-word-count mt-3"></div>
-                                        </div>
+                                        <div id="flash-messages" data-success="{{ session('success') }}" data-error="{{ session('error') }}"></div>
+
+<!-- Textarea with ckeditor class -->
+<div class="form-group">
+    <label for="description">Description</label>
+    <textarea class="ckeditor form-control" id="description" name="description" rows="10"></textarea>
+</div>
                                         <div class="col-lg-12 text-end">
                                             <button type="submit" class="btn btn-primary ">Update Site Settings</button>
                                         </div>

@@ -22,7 +22,6 @@
                         <div data-swiper-parallax="500" class="slide-btns">
                             <a href="#" class="ps-btn fade-in-up delay-3"><span class="text">Our services</span></a>
                             <a href="#" class="ps-btn fade-in-up delay-4"><span class="text">More about us</span></a>
-                            {{-- <a href="#" class="ps-btn-s2 fade-in-up delay-4">More about us</a>  --}}
                         </div>
                     </div>
                 </div> 
@@ -210,112 +209,6 @@
     </div> <!-- end container -->
 </section>
 <!-- end testimonials-section-s2 -->
-
-
-<!-- start featured-project-section-s2 -->
-<section class="featured-project-section-s2 section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
-                <div class="section-title-s5">
-                    <span>Featured Projects</span>
-                    <h2>Explore What We've Done</h2>
-                    <p>Hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="content-area">
-        <div class="project-grids featured-project-slider clearfix">
-            <div class="grid">
-                <div class="img-holder">
-                    <img src="fronted/assets/images/featured-project-slider/img-1.jpg" alt>
-                </div>
-                <div class="overlay">
-                    <span class="count">01.</span>
-                    <h3>Welding Processing</h3>
-                    <p>Travelling salesman and above it there hung a picture that he had recently cut out</p>
-                    <a href="#" class="ps-btn">Read More</a>
-                </div>
-            </div>
-            <div class="grid">
-                <div class="img-holder">
-                    <img src="fronted/assets/images/featured-project-slider/img-2.jpg" alt>
-                </div>
-                <div class="overlay">
-                    <span class="count">02.</span>
-                    <h3>Materials project</h3>
-                    <p>Travelling salesman and above it there hung a picture that he had recently cut out</p>
-                    <a href="#" class="ps-btn">Read More</a>
-                </div>
-            </div>
-            <div class="grid">
-                <div class="img-holder">
-                    <img src="fronted/assets/images/featured-project-slider/img-3.jpg" alt>
-                </div>
-                <div class="overlay">
-                    <span class="count">03.</span>
-                    <h3>Oil & Gas project</h3>
-                    <p>Travelling salesman and above it there hung a picture that he had recently cut out</p>
-                    <a href="#" class="ps-btn">Read More</a>
-                </div>
-            </div>
-            <div class="grid">
-                <div class="img-holder">
-                    <img src="fronted/assets/images/featured-project-slider/img-4.jpg" alt>
-                </div>
-                <div class="overlay">
-                    <span class="count">04.</span>
-                    <h3>Power Energy project</h3>
-                    <p>Travelling salesman and above it there hung a picture that he had recently cut out</p>
-                    <a href="#" class="ps-btn">Read More</a>
-                </div>
-            </div>
-            <div class="grid">
-                <div class="img-holder">
-                    <img src="fronted/assets/images/featured-project-slider/img-1.jpg" alt>
-                </div>
-                <div class="overlay">
-                    <span class="count">05.</span>
-                    <h3>Power Energy project</h3>
-                    <p>Travelling salesman and above it there hung a picture that he had recently cut out</p>
-                    <a href="#" class="ps-btn">Read More</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- end featured-project-section-s2 -->
-
-
-<!-- start partners-section -->
-<section class="partners-section">
-    <h2 class="hidden">Partners</h2>
-    <div class="container">
-        <div class="row">
-            <div class="col col-xs-12">
-                <div class="partner-grids partners-slider">
-                    <div class="grid">
-                        <img src="fronted/assets/images/partners/img-1.jpg" alt>
-                    </div>
-                    <div class="grid">
-                        <img src="fronted/assets/images/partners/img-2.jpg" alt>
-                    </div>
-                    <div class="grid">
-                        <img src="fronted/assets/images/partners/img-3.jpg" alt>
-                    </div>
-                    <div class="grid">
-                        <img src="fronted/assets/images/partners/img-4.jpg" alt>
-                    </div>
-                    <div class="grid">
-                        <img src="fronted/assets/images/partners/img-5.jpg" alt>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- end container -->
-</section>
-<!-- end partners-section -->
 
 
 <!-- start fun-fact-section -->
@@ -605,5 +498,5 @@
 @endsection
         
 @push('scripts')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
 @endpush

@@ -11,6 +11,10 @@
 	--ck-content-font-family: 'Lato';
 }
 
+.pointer {
+	cursor: pointer;
+}
+
 .main-container {
 	font-family: var(--ck-content-font-family);
 	width: fit-content;

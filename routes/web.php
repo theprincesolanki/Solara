@@ -9,15 +9,18 @@ use App\Http\Controllers\UserAuth\FrontendController;
 /* backend */
 use App\Http\Controllers\AdminAuth\DashboardController;
 use App\Http\Controllers\AdminAuth\SiteSettingController;
-
+use App\Http\Controllers\AdminAuth\EnquiryController;
 
 
 /* frontend */
+
 Route::get('/', [FrontendController::class, 'index'])->name('home');
 Route::get('/about', [FrontendController::class, 'about'])->name('about');
 Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
 Route::get('/services', [FrontendController::class, 'services'])->name('services');
 Route::get('/products', [FrontendController::class, 'products'])->name('products');
+Route::post('/contact/submit', [FrontendController::class, 'contact_submit'])->name('contact.submit');
+
 
 
 
@@ -33,6 +36,9 @@ Route::middleware(['auth', 'verified'])->prefix('pe-secure-admin/')->name('backe
 
     Route::get('site-settings', [SiteSettingController::class, 'edit'])->name('site-settings.edit');
     Route::post('site-settings', [SiteSettingController::class, 'update'])->name('site-settings.update');
+
+    Route::get('enquiries', [EnquiryController::class, 'index'])->name('enquiries.index');
+    Route::delete('enquiries/{enquiry}', [EnquiryController::class, 'destroy'])->name('enquiries.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

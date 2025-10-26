@@ -13,12 +13,12 @@
     <meta charset="utf-8" />
     <title>Prince Enterprise</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesbrand" name="author" />
+    <meta content="Prince Enterprise" name="description" />
+    <meta content="Prince Enterprise" name="author" />
     
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.ico') }}">
 
@@ -36,13 +36,6 @@
 
     <!-- Custom Css -->
     <link href="{{ asset('backend/assets/css/custom.min.css') }}" rel="stylesheet" type="text/css" />
-
-    <!-- Ckeditor Css -->
-    <link rel="stylesheet" href="{{ asset('backend/assets/js/ckeditor/style.css') }}">
-    <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/46.0.3/ckeditor5.css" crossorigin>
-
-    <!-- Toastr CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 </head>
 
 <body>
@@ -74,6 +67,10 @@
 
     <!-- JAVASCRIPT -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('backend/assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('backend/assets/libs/simplebar/simplebar.min.js') }}"></script>
     <script src="{{ asset('backend/assets/libs/node-waves/waves.min.js') }}"></script>
@@ -90,75 +87,10 @@
     <!-- App js -->
     <script src="{{ asset('backend/assets/js/app.js') }}"></script>
 
-    <!-- ck Editor -->
-    <script src="https://cdn.ckeditor.com/ckeditor5/46.0.3/ckeditor5.umd.js" crossorigin></script>
-    <script src="{{ asset('backend/assets/js/ckeditor/main.js') }}"></script>
-
-    <!-- Toastr JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
-    <script>
-        // Toastr notifications
-        @if(session('success'))
-            toastr.success("{{ session('success') }}");
-        @endif
-
-        @if(session('error'))
-            toastr.error("{{ session('error') }}");
-        @endif
-
-        // Password toggle functionality
-        document.querySelectorAll('.password-addon').forEach(button => {
-            button.addEventListener('click', function () {
-                const input = this.closest('.position-relative').querySelector('.password-input');
-                const icon = this.querySelector('i');
-                const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
-                input.setAttribute('type', type);
-                
-                // Corrected icon toggle logic
-                if (type === 'text') {
-                    icon.classList.remove('ri-eye-fill');
-                    icon.classList.add('ri-eye-off-fill');
-                } else {
-                    icon.classList.remove('ri-eye-off-fill');
-                    icon.classList.add('ri-eye-fill');
-                }
-            });
-        });
-
-        // Back to top button
-        window.onscroll = function() {
-            scrollFunction();
-        };
-
-        function scrollFunction() {
-            const backToTopBtn = document.getElementById("back-to-top");
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                backToTopBtn.style.display = "block";
-            } else {
-                backToTopBtn.style.display = "none";
-            }
-        }
-
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-
-        // Hide preloader when page is loaded
-        window.addEventListener('load', function() {
-            const preloader = document.getElementById('preloader');
-            if (preloader) {
-                preloader.style.display = 'none';
-            }
-        });
-
-        function reloadPage() {
-            setTimeout(function() {
-                window.location.reload();
-            }, 1500);
-        }
-    </script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.0.0/classic/ckeditor.js"></script>
+    <script src="{{ asset('backend/assets/js/custom.js') }}"></script>
     @stack('scripts')
 </body>
 </html>

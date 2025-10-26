@@ -29,38 +29,36 @@
         </div>
         <div class="row">
             <div class="col col-md-7">
-                <form method="post" class="contact-validation-active" id="contact-form-main">
-                    <div>
-                        <input type="text" class="form-control" name="name" id="name" placeholder="Name*">
+                <form id="contact-form-main" method="POST">
+                    @csrf
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="name" placeholder="Name*">
+                        <span class="error text-danger" id="error-name"></span>
                     </div>
-                    <div>
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Email*">
+                    <div class="mb-3">
+                        <input type="email" class="form-control" name="email" placeholder="Email*">
+                        <span class="error text-danger" id="error-email"></span>
                     </div>
-                    <div>
-                        <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone*">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="phone" placeholder="Phone*">
+                        <span class="error text-danger" id="error-phone"></span>
                     </div>
-                    <div>
+                    <div class="mb-3">
                         <select name="subject" class="form-control">
-                            <option disabled="disabled" selected>Contact subject</option>
-                            <option>Subject 1</option>
-                            <option>Subject 2</option>
-                            <option>Subject 3</option>
+                            <option disabled selected>Contact subject</option>
+                            <option value="General Inquiry" class="pointer">General Inquiry</option>
+                            <option value="Support / Help" class="pointer">Support / Help</option>
+                            <option value="Other" class="pointer">Other</option>
                         </select>
+                        <span class="error text-danger" id="error-subject"></span>
                     </div>
-                    <div class="fullwidth">
-                        <textarea class="form-control" name="note"  id="note" placeholder="Case Description..."></textarea>
+                    <div class="mb-3">
+                        <textarea class="form-control" name="note" placeholder="Case Description..."></textarea>
+                        <span class="error text-danger" id="error-note"></span>
                     </div>
-                    <div class="submit-area">
-                        <button type="submit" class="theme-btn">Submit Now</button>
-                        <div id="loader">
-                            <i class="ti-reload"></i>
-                        </div>
-                    </div>
-                    <div class="clearfix error-handling-messages">
-                        <div id="success">Thank you</div>
-                        <div id="error"> Error occurred while sending email. Please try again later. </div>
-                    </div>
+                    <button type="submit" class="theme-btn">Submit Now</button>
                 </form>
+
             </div>  
 
             <div class="col col-md-5">
@@ -138,5 +136,107 @@
 
 @endsection
 @push('scripts')
-    
+<script>
+    $(document).ready(function() {
+        $('#contact-form-main').on('submit', function() {
+            $('#loader').show();
+        });
+
+        toastr.options = {
+            "closeButton": true,
+            "progressBar": true,
+            "positionClass": "toast-top-right",
+            "timeOut": "3000"
+        };
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('input[name="_token"]').val()
+            }
+        });
+
+        $('#contact-form-main').on('submit', function(e){
+            e.preventDefault(); 
+            $('.error').text(''); 
+
+            let name = $('input[name="name"]').val().trim();
+            let email = $('input[name="email"]').val().trim();
+            let phone = $('input[name="phone"]').val().trim();
+            let subject = $('select[name="subject"]').val();
+            let note = $('textarea[name="note"]').val().trim();
+
+            let hasError = false;
+
+            if(!name){ 
+                $('#error-name').text('Please enter your name.'); 
+                hasError = true; 
+            }
+
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if(!email){ 
+                $('#error-email').text('Please enter your email.'); 
+                hasError = true; 
+            } else if(!emailPattern.test(email)){
+                $('#error-email').text('Please enter a valid email address.');
+                hasError = true;
+            }
+
+            let phonePattern = /^\+?[0-9]{9,15}$/;
+            let dummyNumbers = ['123456789','111111111','000000000'];
+            if(!phone){ 
+                $('#error-phone').text('Please enter your phone number.'); 
+                hasError = true; 
+            } else if(!phonePattern.test(phone)){
+                $('#error-phone').text('Please enter a valid phone number (9-15 digits).');
+                hasError = true;
+            } else if(dummyNumbers.includes(phone)){
+                $('#error-phone').text('Please enter a real phone number.');
+                hasError = true;
+            }
+
+            if(!subject){ 
+                $('#error-subject').text('Please select a subject.'); 
+                hasError = true; 
+            }
+
+            if(!note){ 
+                $('#error-note').text('Please enter your message.'); 
+                hasError = true; 
+            }
+
+            if(hasError){
+                toastr.error('Please fill all required fields correctly before submitting.');
+                return false;
+            }
+
+            $.ajax({
+                url: "{{ route('contact.submit') }}",
+                type: "POST",
+                data: $(this).serialize(),
+                success: function(res){
+                    if(res.status){
+                        toastr.clear(); 
+                        toastr.success(res.message);
+                        $('#contact-form-main')[0].reset();
+                    } else {
+                        toastr.error(res.message || 'Something went wrong. Please try again.');
+                    }
+                },
+                error: function(xhr){
+                    toastr.clear();
+                    if(xhr.status === 422){
+                        let errors = xhr.responseJSON.errors;
+                        $.each(errors, function(key, value){
+                            $('#error-' + key).text(value[0]);
+                        });
+                        toastr.error('Please check the form for errors and try again.');
+                    } else {
+                        toastr.error('Server error. Try again later.');
+                    }
+                }
+            });
+        });
+
+    });
+</script>
 @endpush        

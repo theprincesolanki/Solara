@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
+use App\Models\Enquiry;
+
 class DashboardController extends Controller
 {
     /**
@@ -16,10 +18,11 @@ class DashboardController extends Controller
      */
     public function dashboard(Request $request): View
     {
-        // dd($request->user());
+        $enquiryCount = Enquiry::count(); 
+
         return view('backend.dashboard', [
             'user' => $request->user(),
+            'enquiryCount' => $enquiryCount,
         ]);
     }
-
 }

@@ -16,6 +16,10 @@ body {
   overflow-x: hidden;
 }
 
+.pointer {
+	cursor: pointer;
+}
+
 @media (max-width: 767px) {
   body {
     font-size: 14px;
