@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
 use App\Models\Enquiry;
+use App\Models\Banner;
 
 class DashboardController extends Controller
 {
@@ -19,10 +20,12 @@ class DashboardController extends Controller
     public function dashboard(Request $request): View
     {
         $enquiryCount = Enquiry::count(); 
+        $bannerCount = Banner::count();
 
         return view('backend.dashboard', [
             'user' => $request->user(),
             'enquiryCount' => $enquiryCount,
+            'bannerCount' => $bannerCount,
         ]);
     }
 }

@@ -7,22 +7,22 @@
         <!-- Dark Logo-->
         <a href="{{ route('backend.dashboard') }}" class="logo logo-dark">
             <span class="logo-sm">
-                <img src="{{ $settings && $settings->site_logo ? asset( $settings->site_logo) : asset('backend/assets/images/logo-sm.png') }}" 
-                     alt="Logo" height="22">
+                <img src="{{ $settings && $settings->site_logo ? asset('storage/' . ltrim($settings->site_logo, '/')) : asset('fronted/assets/images/logo-2.png') }}"
+                    alt="{{ $settings && $settings->site_name ? $settings->site_name : 'Site Logo' }}" height="22">
             </span>
             <span class="logo-lg">
-                <img src="{{ $settings && $settings->site_logo ? asset( $settings->site_logo) : asset('backend/assets/images/logo-sm.png') }}" 
-                     alt="Logo" height="50">
+                <img src="{{ $settings && $settings->site_logo ? asset('storage/' . ltrim($settings->site_logo, '/')) : asset('fronted/assets/images/logo-2.png') }}"
+                    alt="{{ $settings && $settings->site_name ? $settings->site_name : 'Site Logo' }}" height="50">
             </span>
         </a>
         <!-- Light Logo-->
         <a href="{{ route('backend.dashboard') }}" class="logo logo-light">
             <span class="logo-sm">
-                <img src="{{ $settings && $settings->site_logo ? asset( $settings->site_logo) : asset('backend/assets/images/logo-sm.png') }}" 
+                <img src="{{ $settings && $settings->site_logo ? asset('storage/' . ltrim($settings->site_logo, '/')) : asset('fronted/assets/images/logo-2.png') }}" 
                      alt="Logo" height="22">
             </span>
             <span class="logo-lg">
-                <img src="{{ $settings && $settings->site_logo ? asset( $settings->site_logo) : asset('backend/assets/images/logo-sm.png') }}" 
+                <img src="{{ $settings && $settings->site_logo ? asset('storage/' . ltrim($settings->site_logo, '/')) : asset('fronted/assets/images/logo-2.png') }}" 
                      alt="Logo" height="50">
             </span>
         </a>
@@ -45,6 +45,14 @@
                 </li>
 
                 <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Pages</span></li>
+                
+                <li class="nav-item">
+                    <a class="nav-link menu-link {{ request()->is('pe-secure-admin/banners*') ? 'active' : '' }}" 
+                    href="{{ route('backend.banners.index') }}">
+                        <i class="ri-image-line"></i>
+                        <span data-key="t-banners">Banners</span>
+                    </a>
+                </li>
                 
                 <li class="nav-item">
                     <a class="nav-link menu-link {{ request()->is('pe-secure-admin/enquiries*') ? 'active' : '' }}" 

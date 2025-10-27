@@ -80,8 +80,9 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="{{ route('home') }}">
-                            <img src="fronted/assets/images/logo-2.png" alt>
+                        <a class="navbar-brand" href="{{ route('home') }}" style="margin-top: 0px;">
+                            <img src="{{ $siteSetting && $siteSetting->site_logo ? asset('storage/'.$siteSetting->site_logo) : asset('fronted/assets/images/logo-2.png') }}"
+                                alt="{{ $siteSetting && $siteSetting->site_name ? $siteSetting->site_name : 'Site Logo' }}">
                         </a>
                     </div>
                     <div id="navbar" class="navbar-collapse collapse navigation-holder fade-in delay-2">
@@ -123,7 +124,7 @@
                             <div class="call">
                                 <i class="fi flaticon-call"></i>
                                 <p>Call us anytime</p>
-                                <h5><a class="call-link" href="tel:+919925589557">+91 99255 89557</a></h5>
+                                <h5><a class="call-link" href="tel:+91{{ $siteSetting->contact_phone1 ?? '9925589557' }}">+91 {{ $siteSetting->contact_phone1 ?? '9925589557' }}</a></h5>
                             </div>
                         </div>
                     </div>

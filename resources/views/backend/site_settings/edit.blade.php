@@ -119,15 +119,135 @@
                                             <input type="text" class="form-control" name="address" placeholder="Enter address"
                                                 value="{{ old('address', $settings->address ?? '') }}">
                                         </div>
+                                        <!-- Contact Fields -->
+                                        <div class="col-lg-6 mb-3">
+                                            <label class="form-label">Contact Name 1</label>
+                                            <input type="text" class="form-control" name="contact_name1" placeholder="Enter contact name 1"
+                                                value="{{ old('contact_name1', $settings->contact_name1 ?? '') }}">
+                                        </div>
+                                        <div class="col-lg-6 mb-3">
+                                            <label class="form-label">Contact Phone 1</label>
+                                            <input type="text" class="form-control" name="contact_phone1" placeholder="Enter contact phone 1"
+                                                value="{{ old('contact_phone1', $settings->contact_phone1 ?? '') }}">
+                                        </div>
+                                        <div class="col-lg-6 mb-3">
+                                            <label class="form-label">Contact Name 2</label>
+                                            <input type="text" class="form-control" name="contact_name2" placeholder="Enter contact name 2"
+                                                value="{{ old('contact_name2', $settings->contact_name2 ?? '') }}">
+                                        </div>
+                                        <div class="col-lg-6 mb-3">
+                                            <label class="form-label">Contact Phone 2</label>
+                                            <input type="text" class="form-control" name="contact_phone2" placeholder="Enter contact phone 2"
+                                                value="{{ old('contact_phone2', $settings->contact_phone2 ?? '') }}">
+                                        </div>
+                                        <div class="col-lg-6 mb-3">
+                                            <label class="form-label">Contact Name 3</label>
+                                            <input type="text" class="form-control" name="contact_name3" placeholder="Enter contact name 3"
+                                                value="{{ old('contact_name3', $settings->contact_name3 ?? '') }}">
+                                        </div>
+                                        <div class="col-lg-6 mb-3">
+                                            <label class="form-label">Contact Phone 3</label>
+                                            <input type="text" class="form-control" name="contact_phone3" placeholder="Enter contact phone 3"
+                                                value="{{ old('contact_phone3', $settings->contact_phone3 ?? '') }}">
+                                        </div>
+                                        <!-- Email Fields -->
+                                        <div class="col-lg-6 mb-3">
+                                            <label class="form-label">Email Name 1</label>
+                                            <input type="text" class="form-control" name="email_name1" placeholder="Enter email name 1"
+                                                value="{{ old('email_name1', $settings->email_name1 ?? '') }}">
+                                        </div>
+                                        <div class="col-lg-6 mb-3">
+                                            <label class="form-label">Email Address 1</label>
+                                            <input type="email" class="form-control" name="email_address1" placeholder="Enter email address 1"
+                                                value="{{ old('email_address1', $settings->email_address1 ?? '') }}">
+                                        </div>
+                                        <div class="col-lg-6 mb-3">
+                                            <label class="form-label">Email Name 2</label>
+                                            <input type="text" class="form-control" name="email_name2" placeholder="Enter email name 2"
+                                                value="{{ old('email_name2', $settings->email_name2 ?? '') }}">
+                                        </div>
+                                        <div class="col-lg-6 mb-3">
+                                            <label class="form-label">Email Address 2</label>
+                                            <input type="email" class="form-control" name="email_address2" placeholder="Enter email address 2"
+                                                value="{{ old('email_address2', $settings->email_address2 ?? '') }}">
+                                        </div>
+                                        <div class="col-lg-6 mb-3">
+                                            <label class="form-label">Email Name 3</label>
+                                            <input type="text" class="form-control" name="email_name3" placeholder="Enter email name 3"
+                                                value="{{ old('email_name3', $settings->email_name3 ?? '') }}">
+                                        </div>
+                                        <div class="col-lg-6 mb-3">
+                                            <label class="form-label">Email Address 3</label>
+                                            <input type="email" class="form-control" name="email_address3" placeholder="Enter email address 3"
+                                                value="{{ old('email_address3', $settings->email_address3 ?? '') }}">
+                                        </div>
+                                        <!-- Meta Fields -->
+                                        <div class="col-lg-6 mb-3">
+                                            <label class="form-label">Meta Title</label>
+                                            <input type="text" class="form-control" name="meta_title" placeholder="Enter meta title"
+                                                value="{{ old('meta_title', $settings->meta_title ?? '') }}">
+                                        </div>
+                                        <div class="col-lg-6 mb-3">
+                                            <label class="form-label">Meta Author</label>
+                                            <input type="text" class="form-control" name="meta_author" placeholder="Enter meta author"
+                                                value="{{ old('meta_author', $settings->meta_author ?? '') }}">
+                                        </div>
+                                        <div class="col-lg-6 mb-3">
+                                            <label class="form-label">Meta Robots</label>
+                                            <input type="text" class="form-control" name="meta_robots" placeholder="Enter meta robots (e.g., index, follow)"
+                                                value="{{ old('meta_robots', $settings->meta_robots ?? 'index, follow') }}">
+                                        </div>
+                                        <div class="col-lg-6 mb-3">
+                                            <label class="form-label">OG Image</label>
+                                            <input type="file" class="form-control" name="og_image">
+                                            @if(!empty($settings->og_image))
+                                                <img src="{{ asset($settings->og_image) }}" class="mt-2" width="80">
+                                            @endif
+                                        </div>
+                                        <div class="col-lg-6 mb-3">
+                                            <label class="form-label">Twitter Image</label>
+                                            <input type="file" class="form-control" name="twitter_image">
+                                            @if(!empty($settings->twitter_image))
+                                                <img src="{{ asset($settings->twitter_image) }}" class="mt-2" width="80">
+                                            @endif
+                                        </div>
+                                        <div class="col-lg-12 mb-3">
+                                            <label class="form-label">Meta Description</label>
+                                            <textarea class="form-control" name="meta_description" placeholder="Enter meta description" rows="4">{{ old('meta_description', $settings->meta_description ?? '') }}</textarea>
+                                        </div>
+                                        <div class="col-lg-12 mb-3">
+                                            <label class="form-label">Meta Keywords</label>
+                                            <textarea class="form-control" name="meta_keywords" placeholder="Enter meta keywords" rows="4">{{ old('meta_keywords', $settings->meta_keywords ?? '') }}</textarea>
+                                        </div>
+                                        <div class="col-lg-12 mb-3">
+                                            <label class="form-label">OG Title</label>
+                                            <input type="text" class="form-control" name="og_title" placeholder="Enter OG title"
+                                                value="{{ old('og_title', $settings->og_title ?? '') }}">
+                                        </div>
+                                        <div class="col-lg-12 mb-3">
+                                            <label class="form-label">OG Description</label>
+                                            <textarea class="form-control" name="og_description" placeholder="Enter OG description" rows="4">{{ old('og_description', $settings->og_description ?? '') }}</textarea>
+                                        </div>
+                                        <div class="col-lg-12 mb-3">
+                                            <label class="form-label">Twitter Title</label>
+                                            <input type="text" class="form-control" name="twitter_title" placeholder="Enter Twitter title"
+                                                value="{{ old('twitter_title', $settings->twitter_title ?? '') }}">
+                                        </div>
+                                        <div class="col-lg-12 mb-3">
+                                            <label class="form-label">Twitter Description</label>
+                                            <textarea class="form-control" name="twitter_description" placeholder="Enter Twitter description" rows="4">{{ old('twitter_description', $settings->twitter_description ?? '') }}</textarea>
+                                        </div>
+                                        <div class="col-lg-12 mb-3">
+                                            <label class="form-label">Map Embed Code</label>
+                                            <textarea class="form-control" name="map_embed" placeholder="Enter map embed code" rows="4">{{ old('map_embed', $settings->map_embed ?? '') }}</textarea>
+                                        </div>
+                                        <div class="col-lg-12 mb-3">
+                                            <label class="form-label">Description</label>
+                                            <textarea class="ckeditor form-control" id="description" name="description" rows="10">{{ old('description', $settings->description ?? '') }}</textarea>
+                                        </div>
                                         <div id="flash-messages" data-success="{{ session('success') }}" data-error="{{ session('error') }}"></div>
-
-<!-- Textarea with ckeditor class -->
-<div class="form-group">
-    <label for="description">Description</label>
-    <textarea class="ckeditor form-control" id="description" name="description" rows="10"></textarea>
-</div>
                                         <div class="col-lg-12 text-end">
-                                            <button type="submit" class="btn btn-primary ">Update Site Settings</button>
+                                            <button type="submit" class="btn btn-primary">Update Site Settings</button>
                                         </div>
                                     </div>
                                 </form>

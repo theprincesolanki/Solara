@@ -1,47 +1,48 @@
 <x-app-layout>
     @section('content')
-        <div class="card">
-            <div class="card-body">
-                <!-- Filters and Refresh Button -->
-                <div class="mb-3">
-                    <div class="row g-3">
-                        <!-- Subject Filter -->
-                        <div class="col-md-3">
-                            <label for="subject-filter" class="form-label">Filter by Subject</label>
-                            <select id="subject-filter" class="form-select">
-                                <option value="">All Subjects</option>
-                                @foreach ($subjects as $subject)
-                                    <option value="{{ $subject }}">{{ $subject }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <!-- Date Range Filter -->
-                        <div class="col-md-3">
-                            <label for="date-range-filter" class="form-label">Filter by Date Range</label>
-                            <input type="text" id="date-range-filter" class="form-control" placeholder="Select date range">
-                        </div>
-                        <!-- Refresh Button -->
-                        <div class="col-md-2 align-self-end">
-                            <button id="refresh-table" class="btn btn-primary">
-                                <i class="ri-refresh-line"></i> Refresh
-                            </button>
+        <div class="container-fluid">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>Enquiries</h2>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-5">
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <label for="subject-filter" class="form-label">Filter by Subject</label>
+                                <select id="subject-filter" class="form-select">
+                                    <option value="">All Subjects</option>
+                                    @foreach ($subjects as $subject)
+                                        <option value="{{ $subject }}">{{ $subject }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="date-range-filter" class="form-label">Filter by Date Range</label>
+                                <input type="text" id="date-range-filter" class="form-control" placeholder="Select date range">
+                            </div>
+                            <div class="col-md-2 align-self-end">
+                                <button id="refresh-table" class="btn btn-primary">
+                                    <i class="ri-refresh-line"></i> Reset
+                                </button>
+                            </div>
                         </div>
                     </div>
+                    <table id="enquiries-table" class="table table-striped table-hover" style="width:100%">
+                        <thead class="table-light">
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Subject</th>
+                                <th>Submitted</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
                 </div>
-                <table id="enquiries-table" class="table table-striped table-hover" style="width:100%">
-                    <thead class="table-light">
-                        <tr>
-                            <th>#</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>Subject</th>
-                            <th>Submitted</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
             </div>
         </div>
     @endsection

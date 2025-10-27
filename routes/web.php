@@ -10,6 +10,7 @@ use App\Http\Controllers\UserAuth\FrontendController;
 use App\Http\Controllers\AdminAuth\DashboardController;
 use App\Http\Controllers\AdminAuth\SiteSettingController;
 use App\Http\Controllers\AdminAuth\EnquiryController;
+use App\Http\Controllers\AdminAuth\BannerController;
 
 
 /* frontend */
@@ -39,6 +40,8 @@ Route::middleware(['auth', 'verified'])->prefix('pe-secure-admin/')->name('backe
 
     Route::get('enquiries', [EnquiryController::class, 'index'])->name('enquiries.index');
     Route::delete('enquiries/{enquiry}', [EnquiryController::class, 'destroy'])->name('enquiries.destroy');
+    
+    Route::resource('banners', BannerController::class)->names('banners');
 });
 
 require __DIR__ . '/auth.php';

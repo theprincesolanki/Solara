@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Log;
 use App\Models\Enquiry;
+use App\Models\Banner;
 
 class FrontendController extends Controller
 {
@@ -17,7 +18,8 @@ class FrontendController extends Controller
      */
     public function index()
     {
-        return view('frontend.home');
+        $banners = Banner::where('is_active', 1)->get();
+        return view('frontend.home', compact('banners'));
     }
 
     public function about()
