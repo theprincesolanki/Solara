@@ -69,3 +69,7 @@
   z-index: 1;
   position: relative;
 }
+
+.rmv-underline {
+  text-decoration: none !important;
+}

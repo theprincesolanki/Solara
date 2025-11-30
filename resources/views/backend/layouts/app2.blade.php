@@ -15,27 +15,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Prince Enterprise" name="description" />
     <meta content="Prince Enterprise" name="author" />
-    
-    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    
-    <!-- App favicon -->
+
     <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.ico') }}">
-
-    <!-- Layout config Js -->
     <script src="{{ asset('backend/assets/js/layout.js') }}"></script>
-
-    <!-- Bootstrap Css -->
     <link href="{{ asset('backend/assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-
-    <!-- Icons Css -->
     <link href="{{ asset('backend/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
-
-    <!-- App Css -->
     <link href="{{ asset('backend/assets/css/app.min.css') }}" rel="stylesheet" type="text/css" />
-
-    <!-- Custom Css -->
     <link href="{{ asset('backend/assets/css/custom.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    @stack('styles')
 </head>
 
 <body>
@@ -65,9 +56,7 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -77,20 +66,14 @@
     <script src="{{ asset('backend/assets/libs/feather-icons/feather.min.js') }}"></script>
     <script src="{{ asset('backend/assets/js/pages/plugins/lord-icon-2.1.0.js') }}"></script>
     <script src="{{ asset('backend/assets/js/plugins.js') }}"></script>
-
-    <!-- ApexCharts -->
     <script src="{{ asset('backend/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
-
-    <!-- Dashboard init -->
     <script src="{{ asset('backend/assets/js/pages/dashboard-crm.init.js') }}"></script>
-
-    <!-- App js -->
     <script src="{{ asset('backend/assets/js/app.js') }}"></script>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/41.0.0/classic/ckeditor.js"></script>
     <script src="{{ asset('backend/assets/js/custom.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
     @stack('scripts')
 </body>
 </html>

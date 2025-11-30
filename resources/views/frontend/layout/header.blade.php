@@ -43,6 +43,7 @@
     <link href="{{ asset('fronted/assets/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('fronted/assets/css/custome.css') }}" rel="stylesheet">
     <link href="{{ asset('fronted/assets/css/fade-style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     
     @stack('styles')
 </head>
@@ -70,7 +71,7 @@
         <!-- end preloader -->
 
         <!-- Start header -->
-        <header id="header" class="site-header header-style-3 fade-in-down">
+        <header id="header" class="site-header header-style-3">
             <nav class="navigation navbar navbar-default">
                 <div class="container">
                     <div class="navbar-header fade-in delay-1">

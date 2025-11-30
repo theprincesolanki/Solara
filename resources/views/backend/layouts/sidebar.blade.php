@@ -15,7 +15,6 @@
                     alt="{{ $settings && $settings->site_name ? $settings->site_name : 'Site Logo' }}" height="50">
             </span>
         </a>
-        <!-- Light Logo-->
         <a href="{{ route('backend.dashboard') }}" class="logo logo-light">
             <span class="logo-sm">
                 <img src="{{ $settings && $settings->site_logo ? asset('storage/' . ltrim($settings->site_logo, '/')) : asset('fronted/assets/images/logo-2.png') }}" 
@@ -62,6 +61,21 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link menu-link {{ request()->is('pe-secure-admin/services*') ? 'active' : '' }}" 
+                    href="{{ route('backend.services.index') }}">
+                        <i class="ri-service-line"></i>
+                        <span data-key="t-dashboards">Services</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link {{ request()->is('pe-secure-admin/services*') ? 'active' : '' }}" 
+                    href="{{ route('backend.services.index') }}">
+                        <i class="ri-box-3-line"></i>   
+                        <span data-key="t-dashboards">Products</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
