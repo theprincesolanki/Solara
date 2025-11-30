@@ -69,8 +69,6 @@
                     </button>
                 </div>
             </form>
-
-
         </div>
 
         @if (session('success'))
